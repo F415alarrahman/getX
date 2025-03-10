@@ -25,14 +25,73 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Obx(() => Text(
-              "ANGKA ${c.counter}",
-            )),
+      appBar: AppBar(
+        title: Text(
+          'Counter Apps',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: c.isDark.value ? Colors.white : Colors.black54,
+          ),
+        ),
       ),
-      floatingActionButton:
-          FloatingActionButton(onPressed: () => c.changeTheme()),
+      body: Center(
+        child: Obx(
+          () => Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "ANGKA",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: c.isDark.value ? Colors.white : Colors.black54,
+                ),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
+                child: Center(
+                    child: Text(
+                  "${c.counter}",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: c.isDark.value ? Colors.white : Colors.black54,
+                  ),
+                )),
+              ),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () => c.increment(),
+            child: Text("+"),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          FloatingActionButton(
+            onPressed: () => c.decrement(),
+            child: Text("-"),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          FloatingActionButton(
+            onPressed: () => c.changeTheme,
+            child: Icon(
+              c.isDark.value ? Icons.sunny : Icons.nightlight_outlined,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
