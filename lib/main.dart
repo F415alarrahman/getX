@@ -59,10 +59,18 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: c.isDark.value ? Colors.white : Colors.black54,
+                    color: c.isDark.value ? Colors.white : Colors.white,
                   ),
                 )),
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.snackbar("Berhasil", "Data Berhasil di Simpan",
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: Colors.greenAccent,
+                        colorText: Colors.white);
+                  },
+                  child: Text("Tampilkan SnackBar"))
             ],
           ),
         ),
