@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/controllers/counter_controller.dart';
+import 'package:getx/views/sceen2.dart';
 
 class HomePage extends StatelessWidget {
   final c = Get.find<CounterController>();
@@ -108,6 +109,15 @@ class HomePage extends StatelessWidget {
                       );
                     },
                     child: Text("Tampilkan Bottom Sheet"),
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.to(Sceen2());
+                    },
+                    child: Text("Tampilkan Screen 2"),
                   ),
                 ),
               ],
