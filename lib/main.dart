@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'package:getx/controllers/counter_controller.dart';
+import 'package:getx/bindings/home_binding.dart';
+import 'package:getx/controllers/home_controller.dart';
 import 'package:getx/views/home_screen.dart';
-import 'package:getx/views/sceen2.dart';
+import 'package:getx/views/screen2.dart';
 
 void main() {
-  Get.put(CounterController());
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final counterC = Get.put(CounterController());
+  final counterC = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Obx(() => GetMaterialApp(
-          theme: counterC.isDark.value ? ThemeData.dark() : ThemeData.light(),
+          theme: ThemeData.light(),
           debugShowCheckedModeBanner: false,
           initialRoute: '/',
-          routes: {
-            '/': (context) => HomePage(),
-            '/second': (context) => Sceen2(),
-          },
+          getPages: [
+            GetPage(name: '/', page: () => HomePage(), binding: HomeBinding()),
+            GetPage(name: '/second', page: () => Sceen2())
+          ],
         ));
   }
 }

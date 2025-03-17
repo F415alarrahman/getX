@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/controllers/counter_controller.dart';
-import 'package:getx/views/sceen2.dart';
+import 'package:getx/controllers/home_controller.dart';
 
 class HomePage extends StatelessWidget {
-  final c = Get.find<CounterController>();
+  final c = Get.find<HomeController>();
   HomePage({super.key});
 
   @override
@@ -16,7 +15,7 @@ class HomePage extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: c.isDark.value ? Colors.white : Colors.black54,
+            color: Colors.white,
           ),
         ),
       ),
@@ -29,11 +28,11 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Counter : ${c.counter}",
+                  "Counter : ${c.count}",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: c.isDark.value ? Colors.white : Colors.black54,
+                    color: Colors.black54,
                   ),
                 ),
                 Container(
