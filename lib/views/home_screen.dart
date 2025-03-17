@@ -115,7 +115,7 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.to(Sceen2());
+                      Get.toNamed('/second');
                     },
                     child: Text("Tampilkan Screen 2"),
                   ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Sceen2 extends StatefulWidget {
   const Sceen2({super.key});
